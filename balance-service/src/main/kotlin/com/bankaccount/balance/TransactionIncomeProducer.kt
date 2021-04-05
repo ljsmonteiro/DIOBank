@@ -1,4 +1,4 @@
-package com.wesleyfuchter.bankaccount.balance
+package com.bankaccount.balance
 
 import io.vertx.core.json.JsonObject
 import io.vertx.kafka.client.serialization.JsonObjectDeserializer

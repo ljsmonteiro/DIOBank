@@ -1,4 +1,4 @@
-package com.wesleyfuchter.bankaccount.balance
+package com.bankaccount.balance
 
 import io.quarkus.mongodb.panache.PanacheMongoRepository
 import javax.enterprise.context.ApplicationScoped
@@ -17,8 +17,7 @@ class BalancesImpl: Balances, PanacheMongoRepository<Balance> {
     override fun recalculate(transaction: Transaction): Balance =
             transaction.let {
                 val currentBalance =
-                        findByAccountId(transaction.accountId) ?:
-                        Balance.defaultInstance(transaction.accountId)
+                        findByAccountId(transaction.accountId) ?: Balance.defaultInstance(transaction.accountId)
                 saveOrUpdate(currentBalance.recalculate(transaction))
             }
 

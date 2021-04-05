@@ -1,4 +1,4 @@
-package com.wesleyfuchter.bankaccount.balance
+package com.bankaccount.balance
 
 interface Balances {
 
